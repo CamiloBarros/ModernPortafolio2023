@@ -1,0 +1,9 @@
+---
+import Button from "../../atoms/Button/Button.astro";
+const { customClass } = Astro.props
+---
+
+<div class=`flex gap-5 ${customClass}`>
+  <Button customClass='hover:text-blue-600'>About me</Button>
+  <Button customClass='bg-blue-600 text-white'>Download CV</Button>
+</div>

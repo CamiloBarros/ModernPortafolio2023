@@ -1,42 +1,65 @@
 ---
-import { Projects, Header, Welcome } from '../components/index.astro'
+import { Projects, Welcome, Home } from '../components/index.astro'
 ---
 
-<html lang='es'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-
-    <link
-      rel='stylesheet'
-      href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0'
-    />
-    <link
-      rel='stylesheet'
-      href='https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css'
-    />
-
-    <link rel='stylesheet' href='../../public/fonts/fonts.css' />
-    <!-- <meta name="generator" content={Astro.generator} /> -->
-    <title>Omar Barros - Portafolio</title>
-  </head>
-  <body>
-    <Header />
-    <main class='h-full'>
-      <Welcome />
-      <Projects />
-    </main>
-  </body>
-</html>
+<Home>
+  <Welcome />
+  <section
+    class='flex flex-col justify-around h-screen bg-neutral-100 relative py-10 px-4'
+  >
+    <h3 class='relative font-extrabold text-xl mb-4'>
+      ABOUT ME <span
+        class='border-b-2 border-[#333333] absolute bottom-0 left-0 w-10'
+      ></span>
+    </h3>
+    <p>
+      Desarrollador web apasionado por la tecnología y el aprendizaje constante.
+      Con experiencia en JavaScript, React y Tailwind CSS, me dedico a crear
+      soluciones innovadoras que marcan la diferencia en el mundo digital. He
+      trabajado con arquitecturas Micro-Frontend y herramientas como Contentful,
+      Azure DevOps y Gatsby para optimizar proyectos web. Destaco por mi
+      habilidad para colaborar eficazmente en equipos ágiles utilizando
+      metodologías SCRUM. Estoy comprometido con la excelencia y siempre
+      dispuesto a enfrentar nuevos desafíos.
+    </p>
+    <p>
+      Tecnologías y herramientas que actualmente estoy explorando y me encuentro
+      interesado.
+    </p>
+    <ol class='px-4'>
+      <li class='list-disc'>.NET</li>
+      <li class='list-disc'>Python</li>
+      <li class='list-disc'>Java</li>
+      <li class='list-disc'>Angular</li>
+      <li class='list-disc'>React</li>
+      <li class='list-disc'>NextJS</li>
+      <li class='list-disc'>Node.js</li>
+      <li class='list-disc'>Bootstrap</li>
+    </ol>
+    <!-- <span class='w-full h-1 absolute bg-blue-600 bottom-0 left-0'></span> -->
+  </section>
+  <Projects />
+</Home>
 
 <style is:global>
   * {
     font-family: 'SFUIText', 'ui-sans-serif', 'system-ui', '-apple-system',
       'Helvetica Neue', 'Arial', 'sans-serif', 'Roboto', 'Segoe UI';
   }
+  /* h1, h2, h3, h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  } */
+
   body {
-    background-color: #000000;
-    color: #f6f1f1;
+    background-color: #ffffff;
+    color: #333333;
   }
 </style>
+
+<!-- 
+
+  Colors: 
+    White : #ffffff
+    Gray : #f2f2f2 
+
+ -->

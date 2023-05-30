@@ -1,0 +1,11 @@
+---
+import BrandTi from "../../atoms/BrandTi/BrandTi.astro";
+const { customClass } = Astro.props
+---
+
+<div class=`flex gap-4 ${customClass}`>
+  <BrandTi name='react' />
+  <BrandTi name='angular' />
+  <BrandTi name='c-sharp' />
+  <BrandTi name='python' />
+</div>

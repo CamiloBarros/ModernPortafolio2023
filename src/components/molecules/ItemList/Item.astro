@@ -1,0 +1,10 @@
+---
+import { IconTi, Subtitle } from "../../atoms/index.astro";
+
+const { nameIcon, name } = Astro.props
+---
+
+<li class='cursor-pointer hover:text-blue-600 relative'>
+  <IconTi name={nameIcon} customClass='text-blue-600 font-medium' />
+  <Subtitle name={name} />
+</li>

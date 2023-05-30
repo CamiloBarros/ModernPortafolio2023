@@ -1,0 +1,20 @@
+---
+import { H2C, H3C } from '../../atoms/Header/index.astro'
+import Paragraph from '../../atoms/Paragraph/Paragraph.astro'
+
+const customClass = ''
+---
+
+<header class=` ${customClass}`>
+  <H3C customClass='relative text-start'>
+    Omar Barros <span
+      class='border-b-2 border-[#333333] absolute bottom-0 left-0 w-10'></span>
+  </H3C>
+
+  <H2C customClass='text-blue-600'>INGENIERO DE SISTEMAS DESARROLLADOR WEB</H2C>
+
+  <Paragraph>
+    Uniendo talento técnico, espíritu innovador y dedicación: construyendo
+    experiencias web excepcionales que impulsan el éxito
+  </Paragraph>
+</header>

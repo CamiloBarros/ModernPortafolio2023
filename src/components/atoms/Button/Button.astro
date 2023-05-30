@@ -1,0 +1,8 @@
+---
+  const { customClass } = Astro.props
+---
+
+
+<button class=`font-medium p-4 hover:scale-105 active:scale-100 ${customClass}`>
+  <slot />
+</button>

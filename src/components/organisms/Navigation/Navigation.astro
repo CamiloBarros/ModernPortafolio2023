@@ -1,0 +1,55 @@
+---
+
+import { H1C } from '../../atoms/Header/index.astro'
+import { IconTi } from '../../atoms/index.astro'
+import { ItemList } from '../../molecules/index.astro';
+
+const items = [
+  {
+    name: 'ABOUT',
+    nameIcon: 'user',
+  },
+  {
+    name: 'SKILLS',
+    nameIcon: 'assembly',
+  },
+  {
+    name: 'PROJECTS',
+    nameIcon: 'code',
+  },
+  {
+    name: 'CONTACT',
+    nameIcon: 'address-book',
+  },
+]
+
+---
+
+<div
+  class='fixed left-0 right-0 flex justify-between items-center bg-neutral-100 p-6 z-10'
+>
+  <H1C>
+    ENCOD<span class='text-blue-600'>ING</span>
+  </H1C>
+
+  <IconTi
+    name='menu'
+    customClass='active:scale-100 hover:scale-125  select-none transition-transform text-2xl'
+  />
+
+  <nav
+    class='absolute max-h-min top-2 right-2 bg-neutral-100 border shadow-lg px-10 pt-20 pb-10 z-50'
+  >
+    <IconTi
+      name='x'
+      customClass='absolute active:scale-100 hover:scale-125 right-4 select-none top-4 text-2xl transition-transform z-10'
+    />
+    <ul class='flex flex-col gap-6 text-lh font-bold'>
+      {
+        items.map((item) => (
+          <ItemList name={item.name} nameIcon={item.nameIcon} />
+        ))
+      }
+    </ul>
+  </nav>
+</div>
