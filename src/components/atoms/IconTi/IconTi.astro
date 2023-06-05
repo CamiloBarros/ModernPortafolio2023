@@ -1,5 +1,10 @@
 ---
-  const { name, customClass = '' } = Astro.props
+interface Props {
+  name : string
+  customClass ?: string
+  dataOpenMenu ?: string
+}
+const { name, customClass = '', dataOpenMenu } = Astro.props
 ---
 
-<i class=`ti ti-${name} cursor-pointer ${customClass}`></i>
+<i class=`ti ti-${name} ${customClass}` data-custom-attribute={dataOpenMenu} ></i>

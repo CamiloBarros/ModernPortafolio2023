@@ -1,16 +1,14 @@
 ---
-import { H1C, H2C, H3C, H4C, BrandTi, Button, Paragraph, Anchor } from "@components/atoms/index.astro"
-import { BrandGroup, ButtonGroup, AnchorRow, HeaderComponent } from "@components/molecules/index.astro";
+import { LineDown } from "@components/index.astro";
+import { BrandGroup, ButtonGroup, AnchorArrow, HeaderComponent, Section } from "@components/molecules/index.astro";
 ---
 
-<section class='flex justify-center items-center h-screen relative  px-3 pt-12'>
-  <div class='flex flex-col justify-center items-center text-center'>
-    <HeaderComponent class='mb-4' />
-    
-    <BrandGroup customClass='mt-6 mb-8' />
-    <ButtonGroup customClass='mt-10 mb-20' />
+<Section customClass='flex flex-col justify-center items-center h-screen text-center'>
+  <HeaderComponent customClass='flex flex-col items-center gap-12'>
+    <!-- <BrandGroup customClass="hidden" /> -->
+    <ButtonGroup  customClass="my-2" />
+  </HeaderComponent>
 
-    <AnchorRow />
-  </div>
-  <span class='w-full h-1 absolute bg-blue-600 bottom-0 left-0'></span>
-</section>
+  <AnchorArrow />
+  <LineDown />
+</Section>

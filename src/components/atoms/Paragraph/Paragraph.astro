@@ -1,7 +1,10 @@
 ---
-  const { customClass } = Astro.props
+interface Props {
+  customClass?: string
+}
+const { customClass = '' } = Astro.props
 ---
 
-<p class=`text-lg ${customClass}`>
+<p class=`text-base sm:text-lg ${customClass}`>
   <slot />
 </p>

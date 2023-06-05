@@ -1,0 +1,11 @@
+---
+import { CardContent } from "@components/index.astro";
+
+const { content } = Astro.props
+
+---
+
+<article class='my-12 max-w-xl'>
+  <img src={content.pathImg} alt='PokePoke' />
+  <CardContent content={content} />
+</article>

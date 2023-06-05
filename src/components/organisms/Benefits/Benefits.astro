@@ -1,0 +1,48 @@
+---
+import {
+  Section,
+  Paragraph,
+  H2C,
+  TextWithLine,
+  H4C,
+  IconTi,
+} from '@components/index.astro'
+import { benefits } from '@models/index'
+---
+
+<Section customClass='flex flex-col gap-10 justify-around' id='skills'>
+  <!-- <Subtitle name="BENEFITS"/> -->
+  <div>
+    <H4C customClass='relative text-blue-600'>
+      <TextWithLine name='BENEFITS' customClass='border-blue-600' />
+    </H4C>
+    <H2C customClass='mb-2'>¿POR QUE CONTRATARME?</H2C>
+    <Paragraph>
+      Contratarme significa obtener resultados excepcionales y un enfoque
+      integral para mejorar tu presencia en línea.
+    </Paragraph>
+  </div>
+
+  <div class='flex flex-wrap gap-4 justify-center'>
+    {
+      benefits.map((benefit) => {
+        // const colors = {
+        //   red: 'text-2xl text-red-600 font-medium',
+        //   blue: 'text-2xl text-blue-600 font-medium',
+        //   yellow: 'text-2xl text-yellow-600 font-medium',
+        //   green: 'text-2xl text-green-600 font-medium',
+        // }
+        return (
+          <div class='border border-transparent bg-neutral-100 rounded-md p-6 font flex flex-col gap-2 hover:shadow-lg  hover:border-neutral-100 hover:bg-white transition-colors duration-300 sm:w-[48%] sm:max-w-md'>
+            <IconTi
+              name={benefit.nameIcon}
+              customClass={`text-2xl text-${benefit.colorIcon}-600 font-medium`}
+            />
+            <H4C>{benefit.title}</H4C>
+            <Paragraph>{benefit.paragraph}</Paragraph>
+          </div>
+        )
+      })
+    }
+  </div>
+</Section>

@@ -1,9 +1,22 @@
 ---
-import { Button } from "@components/atoms/index.astro";
+import { Anchor, Button, IconTi } from '@components/index.astro'
 const { customClass } = Astro.props
 ---
 
-<div class=`flex gap-5 ${customClass}`>
-  <Button customClass='hover:text-blue-600'>About me</Button>
-  <Button customClass='bg-blue-600 text-white'>Download CV</Button>
+<div class=`flex gap-2 ${customClass}`>
+  <Anchor
+    href='https://www.linkedin.com/in/ocbarrosr/'
+    target='_blank'
+    customClass='hover:text-blue-600 flex items-center gap-1 p-0'
+  >
+    <IconTi name='brand-linkedin' customClass='text-4xl' />
+    <span> Resumen</span>
+  </Anchor>
+  <Anchor
+    href='/public/pdf/CV_OCBR_SinglePage_2023_1.pdf'
+    customClass='bg-blue-600 text-white flex items-center'
+    download='CV_OmarBarros_2023.pdf'
+  >
+    Download CV
+  </Anchor>
 </div>

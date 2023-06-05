@@ -1,8 +1,15 @@
 ---
-  const { customClass, href, id } = Astro.props
+  interface Props {
+    customClass ?: string
+    href : string
+    id ?: string
+    target ?: string
+    download ?: boolean | string
+  }
+  const { customClass = '', href, id = '', target = '_self', download = false } = Astro.props
 ---
 
 
-<a href={href} id={id} class=`cursor-pointer font-medium p-4 hover:scale-105 active:scale-100 ${customClass}`>
+<a href={href} id={id} target={target} download={download} class=`cursor-pointer font-medium p-4 hover:scale-110 active:scale-100 transition-transform ${customClass}`>
   <slot />
 </a>

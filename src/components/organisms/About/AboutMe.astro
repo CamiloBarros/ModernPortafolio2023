@@ -1,0 +1,54 @@
+---
+import {
+  H2C,
+  H4C,
+  Paragraph,
+  Section,
+  Subtitle,
+  TextWithLine,
+} from '@components/index.astro'
+import { technologies } from '@models/index'
+---
+
+<Section customClass='flex flex-col gap-10' bgColor='neutral-100' id="about">
+  <div>
+    <H4C customClass='relative text-blue-600'>
+      <TextWithLine name='ABOUT ME' customClass='border-blue-600' />
+    </H4C>
+    <H2C customClass='mb-2'>¿QUIERES CONOCERME?</H2C>
+    <Paragraph>
+      Soy Omar Camilo Barros Rivadeneira, un ingeniero de sistemas apasionado
+      por el desarrollo web y la creación de soluciones innovadoras.
+    </Paragraph>
+    <br />
+    <Paragraph>
+      Tengo experiencia en JavaScript, React y Tailwind CSS, me dedico a construir
+      experiencias digitales únicas utilizando arquitecturas Micro-Frontend y
+      herramientas como Contentful, Azure DevOps y Gatsby.
+    </Paragraph>
+  </div>
+  <H4C customClass='relative text-blue-600 w-max'>
+    Un poco mas...
+  </H4C>
+  <Paragraph>
+    Además de mis habilidades técnicas, disfruto del arte en todas sus formas:
+    desde dibujar hasta sumergirme en películas o anime. Mi pasión artística
+    complementa mi trabajo al inspirarme a crear soluciones visualmente
+    impactantes e intuitivas.
+  </Paragraph>
+  <Paragraph>
+    Me destaco trabajando con metodologías ágiles como SCRUM y colaborando
+    eficazmente en equipos para cumplir con los objetivos del proyecto. Estoy
+    comprometido con la excelencia profesional y siempre dispuesto a aprender
+    nuevas tecnologías para mantenerme actualizado.
+  </Paragraph>
+  <Paragraph>
+    Tecnologías y herramientas que actualmente estoy explorando y me encuentro
+    interesado.
+  </Paragraph>
+
+  <ol class='px-4'>
+    {technologies.map((name) => <li class='list-disc'>{name}</li>)}
+  </ol>
+  <!-- <span class='w-full h-1 absolute bg-blue-600 bottom-0 left-0'></span> -->
+</Section>

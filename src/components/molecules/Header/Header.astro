@@ -1,19 +1,34 @@
 ---
-import { H2C, H3C, Paragraph } from '@components/atoms/index.astro'
+import {
+  H2C,
+  H3C,
+  Paragraph,
+  TextWithLine,
+} from '@components/atoms/index.astro'
 
-const customClass = ''
+const { customClass = '' } = Astro.props
 ---
 
-<header class=` ${customClass}`>
-  <H3C customClass='relative text-start'>
-    Omar Barros <span
-      class='border-b-2 border-[#333333] absolute bottom-0 left-0 w-10'></span>
-  </H3C>
+<header class=`${customClass}`>
+  <div
+    class='rounded-full w-40 h-40 sm:w-60 sm:h-60 max-w-xs max-h-xs overflow-hidden mx-auto blur-sm hover:blur-none hover:shadow-lg transition-all duration-300 hover:scale-105'
+  >
+    <img class='w-full h-full object-cover' src='/imgs/persona.jpg' alt='' />
+  </div>
+  <div>
+    <div class='max-w-max mx-auto'>
+      <H3C customClass='relative text-start w-max'>
+        <TextWithLine name='OMAR BARROS' customClass='border-[#333333]' />
+      </H3C>
+      <H2C customClass='text-blue-600 w-max m-auto'>INGENIERO DE SISTEMAS</H2C>
+      <H2C customClass='text-blue-600 w-max m-auto'>DESARROLLADOR WEB</H2C>
+    </div>
 
-  <H2C customClass='text-blue-600'>INGENIERO DE SISTEMAS DESARROLLADOR WEB</H2C>
+    <Paragraph customClass='max-w-lg my-2'>
+      Uniendo talento técnico, espíritu innovador y dedicación: construyendo
+      experiencias web excepcionales que impulsan el éxito
+    </Paragraph>
+  </div>
 
-  <Paragraph>
-    Uniendo talento técnico, espíritu innovador y dedicación: construyendo
-    experiencias web excepcionales que impulsan el éxito
-  </Paragraph>
+  <slot />
 </header>

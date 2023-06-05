@@ -1,0 +1,14 @@
+---
+import { H2C, TextWithLine } from '@components/index.astro'
+
+interface Props {
+  name: string
+  customClass?: string
+}
+
+const { name,  customClass = '' } = Astro.props
+---
+
+<H2C customClass={customClass}>
+  <TextWithLine name={name} customClass='border-blue-600 w-8' />
+</H2C>

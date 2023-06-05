@@ -1,61 +1,32 @@
 ---
-const projects = [
-  {
-    pathImg: '/public/imgs/pokepoke.png',
-    name: 'pokepoke',
-    title: 'PokePoke',
-    paragraph:
-      'PokePoke is a frontend application that connects to a free API called PokeApi, and facilitates the visualization and search of pokemon through a minimalist interface.',
-    technologies: ['React', 'Tailwind', 'Vite'],
-    urlDemo: '',
-    urlSource: '',
-  },
-  {
-    pathImg: '/public/imgs/wordle.png',
-    name: 'wordle',
-    title: 'WordleGameCB',
-    paragraph:
-      'WordleGameCB is a game inspired by the Wordle word game developed by Josh Wardle. This application was developed with the aim of putting into practice React concepts such as the use of Hooks, Custom Hooks and States.',
-    technologies: ['React', 'Tailwind', 'Vite'],
-    urlDemo: '',
-    urlSource: '',
-  },
-]
+import {
+  Card,
+  H2C,
+  H4C,
+  Paragraph,
+  Section,
+  TextWithLine,
+} from '@components/index.astro'
+import { projects } from '@models/index'
 ---
 
-<section class='bg-white py-8 px-4'>
-  <h2 class='text-2xl font-bold w-min relative'>
-    <span class='border-b-2 border-[#333333] absolute bottom-0 left-0 w-10'
-    ></span>Proyectos
-  </h2>
-  {
-    projects.map((p) => {
-      return (
-        <figure class='my-12'>
-          <img src={p.pathImg} alt='PokePoke' />
-          <figcaption class='border border-gray-300 py-2 px-4 my-8'>
-            <h3 class='mt-6 mb-4 text-lg font-bold'>{p.title}</h3>
-            <p class='mb-2'>{p.paragraph}</p>
-            <ul class='flex gap-8 justify-center mt-4 mb-2'>
-              {p.technologies.map((t) => {
-                return (
-                  <li class='font-semibold hover:font-bold hover:scale-110 hover:border-b-2 hover:border-black border-b-2 border-transparent active:scale-100 select-none cursor-pointer'>
-                    {t}
-                  </li>
-                )
-              })}
-            </ul>
-            <div class='w-max mx-auto'>
-              <button class='mx-2 my-8 border-2 border-black bg-black px-6 py-2 text-white font-semibold hover:scale-110 active:scale-100'>
-                Demo
-              </button>
-              <button class='mx-2 my-8 border-2 border-black bg-white px-6 py-2 text-black font-semibold hover:scale-110 active:scale-100'>
-                Source
-              </button>
-            </div>
-          </figcaption>
-        </figure>
-      )
-    })
-  }
-</section>
+<Section customClass='flex flex-col gap-10 justify-around' id="projects" >
+  <div>
+    <H4C customClass='relative text-blue-600'>
+      <TextWithLine name='FEATURED PROJECTS' customClass='border-blue-600' />
+    </H4C>
+    <H2C customClass='mb-2'>¿INTERESADO EN CONOCER MI TRABAJO?</H2C>
+    <Paragraph>
+      Te presento una selección de proyectos que reflejan mi habilidad para
+      innovar y crear soluciones efectivas en el mundo digital.
+    </Paragraph>
+  </div>
+
+  <div class="flex flex-col justify-center items-center">
+    {
+      projects.map((p) => {
+        return <Card content={p} />
+      })
+    }
+  </div>
+</Section>

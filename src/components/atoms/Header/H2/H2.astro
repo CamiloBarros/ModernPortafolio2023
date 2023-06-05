@@ -1,7 +1,13 @@
 ---
- const { customClass } = Astro.props
+interface Props {
+  customClass ?: string
+}
+
+const { customClass = '' } = Astro.props
 ---
 
-<h2 class=`font-extrabold text-xl select-none ${customClass}`>
+<h2
+  class=`font-extrabold relative text-blue-600 text-xl sm:text-2xl ${customClass}`
+>
   <slot />
 </h2>

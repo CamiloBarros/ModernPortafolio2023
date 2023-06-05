@@ -1,11 +1,15 @@
 ---
+interface Props {
+  customClass ?: string
+}
+
 import { BrandTi } from "@components/atoms/index.astro";
-const { customClass } = Astro.props
+const { customClass = '' } = Astro.props
 ---
 
 <div class=`flex gap-4 ${customClass}`>
-  <BrandTi name='react' />
-  <BrandTi name='angular' />
-  <BrandTi name='c-sharp' />
-  <BrandTi name='python' />
+  <BrandTi name='react' customClass="text-4xl sm:text-5xl" />
+  <BrandTi name='angular' customClass="text-4xl sm:text-5xl" />
+  <BrandTi name='c-sharp' customClass="text-4xl sm:text-5xl" />
+  <BrandTi name='python' customClass="text-4xl sm:text-5xl" />
 </div>

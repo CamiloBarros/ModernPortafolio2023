@@ -1,27 +1,7 @@
 ---
-
 import { H1C, IconTi } from '@components/atoms/index.astro'
-import { ItemList } from '@components/molecules/index.astro';
-
-const items = [
-  {
-    name: 'ABOUT',
-    nameIcon: 'user',
-  },
-  {
-    name: 'SKILLS',
-    nameIcon: 'assembly',
-  },
-  {
-    name: 'PROJECTS',
-    nameIcon: 'code',
-  },
-  {
-    name: 'CONTACT',
-    nameIcon: 'address-book',
-  },
-]
-
+import { ItemList } from '@components/molecules/index.astro'
+import { sections } from '@models/index'
 ---
 
 <div
@@ -32,23 +12,70 @@ const items = [
   </H1C>
 
   <IconTi
-    name='menu'
-    customClass='active:scale-100 hover:scale-125  select-none transition-transform text-2xl'
+    name='menu-2'
+    customClass='active:scale-100 cursor-pointer hover:scale-125 transition-transform text-2xl lg:hidden'
+    dataOpenMenu='data-open-close-menu'
   />
 
   <nav
-    class='absolute max-h-min top-2 right-2 bg-neutral-100 border shadow-lg px-10 pt-20 pb-10 z-50'
+    class='absolute max-h-min top-0 border-2 right-0 bg-neutral-100 shadow-lg w-52 pt-20 z-50 menu'
   >
     <IconTi
       name='x'
-      customClass='absolute active:scale-100 hover:scale-125 right-4 select-none top-4 text-2xl transition-transform z-10'
+      customClass='absolute active:scale-100 cursor-pointer hover:scale-125 right-4 top-4 text-2xl transition-transform z-10'
+      dataOpenMenu='data-open-close-menu'
     />
-    <ul class='flex flex-col gap-6 text-lh font-bold'>
+    <ul class='flex flex-col'>
       {
-        items.map((item) => (
-          <ItemList name={item.name} nameIcon={item.nameIcon} />
+        sections.map((item) => (
+          <ItemList
+            name={item.name}
+            nameIcon={item.nameIcon}
+            customClass='border-b border-neutral-300'
+            href={item.href}
+          />
         ))
       }
     </ul>
   </nav>
 </div>
+
+<script>
+  const $$ = (query) => document.querySelectorAll(query)
+  const $menus = $$('[data-custom-attribute="data-open-close-menu"]')
+  const $nav = $$('nav')[0]
+
+  document.addEventListener('click', (event) => {
+    if ($menus && !$menus[0].contains(event.target)) {
+      $nav.classList.remove('active')
+    }
+  })
+
+  $menus.forEach(($menu) => {
+    $menu.addEventListener('click', () => {
+      // Añade o elimina la clase active según sea necesario.
+      $nav.classList.toggle('active')
+    })
+  })
+</script>
+
+<style is:inline>
+  .menu {
+    opacity: 0;
+    transform: translateY(-20px) scaleZ(0);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  }
+
+  .menu.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 1024px) {
+    .not-menu {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>

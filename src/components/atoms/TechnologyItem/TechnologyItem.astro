@@ -1,0 +1,12 @@
+---
+interface Props {
+  customClass?: string
+  technology: string
+}
+
+const { technology, customClass = '' } = Astro.props
+---
+
+<li class=`font-medium text-blue-500 text-xs ${customClass}`>
+  {technology}
+</li>

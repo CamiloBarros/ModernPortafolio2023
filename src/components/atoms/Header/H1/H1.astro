@@ -1,7 +1,10 @@
 ---
-  const { customClass } = Astro.props
+interface Props {
+  customClass?: string
+}
+const { customClass = '' } = Astro.props
 ---
 
-<h1 class=`cursor-point font-black text-2xl select-none ${customClass}`>
+<h1 class=`cursor-point font-black text-2xl ${customClass}`>
   <slot />
 </h1>

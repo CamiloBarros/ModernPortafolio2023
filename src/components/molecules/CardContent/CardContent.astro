@@ -1,0 +1,33 @@
+---
+import TechnologyItem from '@components/atoms/TechnologyItem/TechnologyItem.astro'
+import {
+  Anchor,
+  H4C,
+  IconTi,
+  Paragraph,
+} from '@components/index.astro'
+
+const {
+  content: { title, paragraph, technologies, urlSource, urlDemo },
+} = Astro.props
+---
+
+<div class='border border-gray-300 py-8 px-4 my-8'>
+  <H4C customClass="text-blue-600 mb-4">{title}</H4C>
+  <Paragraph customClass='mb-2'>{paragraph}</Paragraph>
+  <ul class='flex mb-2'>
+    {
+      technologies.map((technology) => (
+        <TechnologyItem technology={technology} customClass='px-1' />
+      ))
+    }
+  </ul>
+  <div class='flex gap-2 justify-end'>
+    <Anchor href={urlSource} target="_blank" customClass='rounded-full bg-gray-300 hover:bg-neutral-700  w-2 h-2 flex justify-center items-center'>
+      <IconTi name='brand-github-filled' customClass='text-white' />
+    </Anchor>
+    <Anchor href={urlDemo} target="_blank" customClass='rounded-full bg-gray-300 hover:bg-neutral-700  w-2 h-2 flex justify-center items-center'>
+      <IconTi name='link' customClass='text-white' />
+    </Anchor>
+  </div>
+</div>
