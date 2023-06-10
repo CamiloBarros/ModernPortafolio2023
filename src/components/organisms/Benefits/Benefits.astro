@@ -10,7 +10,7 @@ import {
 import { benefits } from '@models/index'
 ---
 
-<Section customClass='flex flex-col gap-10 justify-around' id='skills'>
+<Section customClass='flex flex-col gap-10 justify-around items-center lg:flex-row lg:justify-center lg:max-w-6xl lg:mx-auto' id='skills'>
   <!-- <Subtitle name="BENEFITS"/> -->
   <div>
     <H4C customClass='relative text-blue-600'>
@@ -33,7 +33,7 @@ import { benefits } from '@models/index'
         //   green: 'text-2xl text-green-600 font-medium',
         // }
         return (
-          <div class='border border-transparent bg-neutral-100 rounded-md p-6 font flex flex-col gap-2 hover:shadow-lg  hover:border-neutral-100 hover:bg-white transition-colors duration-300 sm:w-[48%] sm:max-w-md'>
+          <div class='border border-transparent bg-neutral-100 rounded-md p-6 font flex flex-col gap-2 hover:shadow-lg  hover:border-neutral-100 hover:bg-white transition-colors duration-300 sm:w-[48%] sm:max-w-sm'>
             <IconTi
               name={benefit.nameIcon}
               customClass={`text-2xl text-${benefit.colorIcon}-600 font-medium`}

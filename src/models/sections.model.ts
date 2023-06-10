@@ -2,21 +2,25 @@ export default [
   {
     name: 'ABOUT',
     nameIcon: 'user-circle',
-    href: '#about'
+    href: '#about',
+    hidden: false
   },
   {
     name: 'SKILLS',
     nameIcon: 'settings',
-    href: '#skills'
+    href: '#skills',
+    hidden: false
   },
   {
     name: 'PROJECTS',
     nameIcon: 'brand-powershell',
-    href: '#projects'
+    href: '#projects',
+    hidden: false
   },
   {
     name: 'CONTACT',
     nameIcon: 'address-book',
-    href: '#contact'
+    href: '#contact',
+    hidden: true
   },
 ]

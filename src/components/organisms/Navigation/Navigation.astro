@@ -17,22 +17,24 @@ import { sections } from '@models/index'
     dataOpenMenu='data-open-close-menu'
   />
 
+
   <nav
-    class='absolute max-h-min top-0 border-2 right-0 bg-neutral-100 shadow-lg w-52 pt-20 z-50 menu'
+    class='absolute lg:static max-h-min top-0 border-2 lg:border-none right-0 bg-neutral-100 shadow-lg lg:shadow-none w-52 lg:w-auto pt-20 lg:pt-0 z-50 menu not-menu'
   >
     <IconTi
       name='x'
-      customClass='absolute active:scale-100 cursor-pointer hover:scale-125 right-4 top-4 text-2xl transition-transform z-10'
+      customClass='absolute active:scale-100 cursor-pointer hover:scale-125 right-4 top-4 text-2xl transition-transform z-10 lg:hidden'
       dataOpenMenu='data-open-close-menu'
     />
-    <ul class='flex flex-col'>
+    <ul class='flex flex-col lg:flex-row lg:gap-8'>
       {
         sections.map((item) => (
           <ItemList
             name={item.name}
             nameIcon={item.nameIcon}
-            customClass='border-b border-neutral-300'
+            customClass='border-b lg:border-none border-neutral-300'
             href={item.href}
+            hidden={item.hidden}
           />
         ))
       }

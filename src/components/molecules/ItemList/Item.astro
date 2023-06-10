@@ -6,13 +6,14 @@ interface Props {
   nameIcon: string
   customClass?: string
   href ?: string
+  hidden ?: boolean
 }
 
-const { nameIcon, name = '', customClass = '', href = '' } = Astro.props
+const { nameIcon, name = '', customClass = '', href = '', hidden = false } = Astro.props
 ---
 
-<li class=`cursor-pointer hover:bg-blue-600 hover:text-white ${customClass}`>
-  <a href={href} class="flex gap-2 items-center p-4">
+<li class=`cursor-pointer hover:bg-blue-600 lg:hover:bg-transparent hover:text-white lg:hover:text-inherit lg:hover:scale-110 lg:active:scale-100 transition-transform ${customClass}` hidden={hidden}>
+  <a href={href} class="flex gap-1 items-center p-4 lg:p-0">
     <IconTi name={nameIcon} customClass="font-bold text-lg" />
     <span>{name}</span>
   </a>
