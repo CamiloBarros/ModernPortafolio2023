@@ -1,6 +1,6 @@
 export default [
   {
-    pathImg: '/public/imgs/pokepoke.png',
+    pathImg: '/imgs/pokepoke.png',
     name: 'pokepoke',
     title: 'PokePoke',
     paragraph:
@@ -10,7 +10,7 @@ export default [
     urlSource: 'https://github.com/CamiloBarros/PokePoke',
   },
   {
-    pathImg: '/public/imgs/wordle.png',
+    pathImg: '/imgs/wordle.png',
     name: 'wordle',
     title: 'WordleGameCB',
     paragraph:
