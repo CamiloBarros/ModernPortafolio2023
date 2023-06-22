@@ -1,15 +1,16 @@
 ---
 interface Props {
   customClass?: string,
+  sectionCustomClass?: string,
   bgColor?: string // white, [#333333], etc...
   id ?: string
 
 }
 
-const { customClass = '', bgColor = 'white', id = '' } = Astro.props
+const { customClass = '', sectionCustomClass = '', bgColor = 'white', id = '' } = Astro.props
 ---
 
-<section class=`bg-${bgColor} py-20 px-10 relative` id={id}>
+<section class=`bg-${bgColor} py-20 px-10 relative ${sectionCustomClass}` id={id}>
   <div class=`${customClass}`>
     <slot />
   </div>
